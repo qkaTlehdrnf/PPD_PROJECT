@@ -92,10 +92,10 @@ class BackgroundTemplate:
 for i in range(10):
     m1 = np.ones([20,10])
     m1[0,i]=3#start position
-    m1[2*i,9] = 5
+    m1[i,9] = 5
     m2 = np.ones([10,20])
     m2[i,0]=3
-    m2[0,5]=5
+    m2[0,i]=5
     m3 = np.ones([30,20])
     m3[i,0]=3
     m3[0,5]=5
@@ -111,7 +111,7 @@ for i in range(10):
     Incheon_Airport.machine_add(machine2)
     Incheon_Airport.machine_add(machine3)
     Incheon_Airport.machine_batch([30,20],1)
-    Incheon_Airport.machine_batch([5,5],2)
+    Incheon_Airport.machine_batch([20,5],2)
     Incheon_Airport.machine_batch([50,40],3)
     # print(Incheon_Airport.machine_dict)
     print(Incheon_Airport.machine_distance_calculate())
