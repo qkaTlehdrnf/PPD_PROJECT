@@ -30,7 +30,7 @@ class MachineTemplate:
         self.inandout()
         return background
 
-class BackgroundTemplate:
+class FactoryTemplate:
     def __init__(self,bg):
         self.null_bg = bg
         self.bg = bg#background must be a numpy matrix with 0 and 1, 1 as already occupied and 0 for empty space
@@ -106,7 +106,7 @@ class BackgroundTemplate:
 #     machine3 = MachineTemplate(m3,3)
 
 #     # machine1.inandout([50,0],[50,100])
-#     Incheon_Airport = BackgroundTemplate(np.zeros([100,100]))
+#     Incheon_Airport = FactoryTemplate(np.zeros([100,100]))
 #     Incheon_Airport.machine_add(machine1)
 #     Incheon_Airport.machine_add(machine2)
 #     Incheon_Airport.machine_add(machine3)
