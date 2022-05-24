@@ -57,8 +57,8 @@ class BackgroundTemplate:
                 end_template = self.machine_dict[end_code]
                 print('in: ',y,', out: ', x, start_template.output_pos, end_template.input_pos,dist(start_template.output_pos, end_template.input_pos))
                 self.machine_dist_mat[y][x] = dist(start_template.output_pos, end_template.input_pos)
-                
         return self.machine_dist_mat
+    
     def machine_batch(self,position,machine_code):
         try:
             one_machine_layout = self.null_bg
@@ -89,31 +89,31 @@ class BackgroundTemplate:
 #I think machine class is needed because substances in and out must be defined
 #What kind of characteristics do machines have to have?
 #In and Out of substance and size of machine and Rules
-for i in range(10):
-    m1 = np.ones([20,10])
-    m1[0,i]=3#start position
-    m1[i,9] = 5
-    m2 = np.ones([10,20])
-    m2[i,0]=3
-    m2[0,i]=5
-    m3 = np.ones([30,20])
-    m3[i,0]=3
-    m3[0,5]=5
+# for i in range(10):
+#     m1 = np.ones([20,10])
+#     m1[0,i]=3#start position
+#     m1[i,9] = 5
+#     m2 = np.ones([10,20])
+#     m2[i,0]=3
+#     m2[0,i]=5
+#     m3 = np.ones([30,20])
+#     m3[i,0]=3
+#     m3[0,5]=5
     
             
-    machine1 = MachineTemplate(m1,1)
-    machine2 = MachineTemplate(m2,2)
-    machine3 = MachineTemplate(m3,3)
+#     machine1 = MachineTemplate(m1,1)
+#     machine2 = MachineTemplate(m2,2)
+#     machine3 = MachineTemplate(m3,3)
 
-    # machine1.inandout([50,0],[50,100])
-    Incheon_Airport = BackgroundTemplate(np.zeros([100,100]))
-    Incheon_Airport.machine_add(machine1)
-    Incheon_Airport.machine_add(machine2)
-    Incheon_Airport.machine_add(machine3)
-    Incheon_Airport.machine_batch([30,20],1)
-    Incheon_Airport.machine_batch([20,5],2)
-    Incheon_Airport.machine_batch([50,40],3)
-    # print(Incheon_Airport.machine_dict)
-    print(Incheon_Airport.machine_distance_calculate())
-    Incheon_Airport.bg2img()
-    #
+#     # machine1.inandout([50,0],[50,100])
+#     Incheon_Airport = BackgroundTemplate(np.zeros([100,100]))
+#     Incheon_Airport.machine_add(machine1)
+#     Incheon_Airport.machine_add(machine2)
+#     Incheon_Airport.machine_add(machine3)
+#     Incheon_Airport.machine_batch([30,20],1)
+#     Incheon_Airport.machine_batch([20,5],2)
+#     Incheon_Airport.machine_batch([50,40],3)
+#     # print(Incheon_Airport.machine_dict)
+#     print(Incheon_Airport.machine_distance_calculate())
+#     Incheon_Airport.bg2img()
+#     #
