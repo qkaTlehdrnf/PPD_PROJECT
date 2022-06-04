@@ -62,7 +62,6 @@ class BackgroundTemplate:
             out = machine.out
         distance += np.linalg.norm(out - self.out)
         return distance
-            
 
     def machine_add(self, machine):  # Adding dictionary of machine
         self.machine_dict[machine.machine_code] = machine
