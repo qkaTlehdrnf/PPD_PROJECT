@@ -60,7 +60,7 @@ class BackgroundTemplate:
         if 2 in self.bg:
             self.collision = True
 
-    def product_line(self, product_name, machine_line:list):
+    def add_product_line(self, product_name, machine_line:list):
         for m in machine_line:
             assert m in self.machine_dict.keys()
         self.product_machines[product_name] = machine_line
@@ -97,6 +97,9 @@ class BackgroundTemplate:
                 position, machine.occupy.shape
             )
             raise BoundaryError(msg)
+        except IndexError as e:
+            msg = str(position)
+            raise IndexError(msg)
         self.collide_check()
 
     def product_line_img(self, product):
@@ -173,9 +176,9 @@ if __name__ == "__main__":
         ICN.machine_batch([20, 5], "m2")
         ICN.machine_batch([50, 40], "m3")
         ICN.machine_batch([10, 10], "m4")
-        ICN.product_line("p1", ["m1", "m2", "m3"])
-        ICN.product_line("p2", ["m2", "m3"])
-        ICN.product_line("p3", ["m3", "m4", "m1"])
+        ICN.add_product_line("p1", ["m1", "m2", "m3"])
+        ICN.add_product_line("p2", ["m2", "m3"])
+        ICN.add_product_line("p3", ["m3", "m4", "m1"])
 
         # print(ICN.machine_dict)
         print(ICN.product_distance_calculate("p1"))
