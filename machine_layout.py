@@ -98,7 +98,7 @@ class BackgroundTemplate:
             )
             raise BoundaryError(msg)
         except IndexError as e:
-            msg = str(position)
+            msg = str(position) + 'possible for machine is already exists'
             raise IndexError(msg)
         self.collide_check()
 
