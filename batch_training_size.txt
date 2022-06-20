@@ -1,0 +1,1 @@
+Batch size:     8/ Training size:    32
